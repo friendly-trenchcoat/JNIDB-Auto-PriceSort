@@ -7,7 +7,7 @@
 // ==/UserScript==
 
 var url = window.location.href;
-var sort = url.match(/sortby=(.+)&/);
+var sort = url.match(/sortby=([^&]*)/);
 
 if (sort !== null) { 
     if (sort[1] != "price"){ 
@@ -16,7 +16,7 @@ if (sort !== null) {
     } 
 }
 else { 
-    url = url.replace("&numitems", "&sortby=price&numitems"); 
+    url = url.replace("show_items", "show_items&sortby=price"); 
     window.location.replace(url);
 }
 
