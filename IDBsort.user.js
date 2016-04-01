@@ -3,7 +3,7 @@
 // @description  Automatically redirect to the same search sorted by price
 // @author       freindly-trenchcoat
 // @namespace    https://github.com/friendly-trenchcoat
-// @match        http://items.jellyneo.net/*
+// @match        http://items.jellyneo.net/?go=item*
 // ==/UserScript==
 
 var url = window.location.href;
@@ -16,7 +16,7 @@ if (sort !== null) {
     } 
 }
 else { 
-    url = url.replace("show_items", "show_items&sortby=price"); 
+    url = url.replace("go=item", "go=item&sortby=price"); 
     window.location.replace(url);
 }
 
